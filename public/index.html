@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wells Fargo – Checking and savings, open in two minutes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap">
+    <span>$325 checking bonus on us</span>
+    <a href="#how">How it works</a>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="/"><i aria-hidden="true"></i></a>
+    <nav id="nav-public" aria-label="Main">
+      <a href="#products">Checking &amp; savings</a>
+      <a href="#how">How it works</a>
+      <a href="#security">Security</a>
+      <a class="pill" href="#open" id="nav-open">Open an account</a>
+    </nav>
+    <nav id="nav-private" class="hidden" aria-label="Account">
+      <button type="button" id="signout" class="pill">Sign off</button>
+    </nav>
+  </div>
+  <div class="accent" aria-hidden="true"></div>
+</header>
+
+<!-- ===================== PUBLIC SITE ===================== -->
+<main id="landing" class="hidden">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="promo">
+        <h1>Open checking or savings in two minutes.</h1>
+        <p class="lead">No monthly fees, no minimum balance, and a clear list of every deposit and payment.</p>
+        <div class="promo-actions">
+          <a class="btn" href="#open" data-type="checking">Open checking</a>
+          <a class="btn ghost" href="#open" data-type="savings">Open savings</a>
+        </div>
+      </div>
+
+      <aside class="panel signon" aria-labelledby="so-h">
+        <h2 id="so-h">Sign on to your accounts</h2>
+        <form id="signin-form" novalidate>
+          <label for="s-email">Email</label>
+          <input class="input" id="s-email" type="email" autocomplete="email" maxlength="254" required>
+          <label for="s-pw">Password</label>
+          <input class="input" id="s-pw" type="password" autocomplete="current-password" maxlength="128" required>
+          <div class="form-err hidden" id="s-err" role="alert"></div>
+          <button class="btn full" type="submit" id="s-btn">Sign on</button>
+        </form>
+        <p class="so-foot">New here? <a href="#open">Open an account</a></p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="products" id="products" aria-labelledby="prod-h">
+    <div class="wrap">
+      <h2 id="prod-h">Two accounts, one simple setup</h2>
+      <div class="tiles">
+        <article class="tile">
+          <h3>Checking</h3>
+          <p>For everyday spending, paying people, and getting paid.</p>
+          <ul>
+            <li>No monthly fee</li>
+            <li>Send money to anyone by name</li>
+            <li>Instant transfers to savings</li>
+          </ul>
+          <a class="btn" href="#open" data-type="checking">Open checking</a>
+        </article>
+        <article class="tile">
+          <h3>Savings</h3>
+          <p>For money you want to set aside and leave alone.</p>
+          <ul>
+            <li>No minimum balance</li>
+            <li>See your savings next to your checking</li>
+            <li>Move money in or out any time</li>
+          </ul>
+          <a class="btn" href="#open" data-type="savings">Open savings</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="open" id="open" aria-labelledby="open-h">
+    <div class="wrap open-grid">
+      <div class="panel">
+        <h2 id="open-h">Open your account</h2>
+        <p class="sub">It takes about two minutes. You get both accounts, and your first deposit goes into the one you choose.</p>
+        <form id="open-form" novalidate>
+          <label for="f-name">Full name</label>
+          <input class="input" id="f-name" autocomplete="name" maxlength="80" required>
+          <div class="err" id="e-name"></div>
+
+          <label for="f-email">Email</label>
+          <input class="input" id="f-email" type="email" autocomplete="email" maxlength="254" required>
+          <div class="err" id="e-email"></div>
+
+          <label id="type-l">Account for your first deposit</label>
+          <div class="seg" role="radiogroup" aria-labelledby="type-l">
+            <div>
+              <input type="radio" name="type" id="t-chk" value="checking" checked>
+              <label for="t-chk">Checking<small>For everyday spending</small></label>
+            </div>
+            <div>
+              <input type="radio" name="type" id="t-sav" value="savings">
+              <label for="t-sav">Savings<small>For money you set aside</small></label>
+            </div>
+          </div>
+
+          <label for="f-dep">First deposit (USD)</label>
+          <input class="input" id="f-dep" type="number" min="0" step="0.01" inputmode="decimal" value="100">
+          <div class="err" id="e-deposit"></div>
+
+          <label for="f-pw">Password</label>
+          <input class="input" id="f-pw" type="password" autocomplete="new-password" maxlength="128" required>
+          <div class="hint">Use at least 8 characters.</div>
+          <div class="err" id="e-password"></div>
+
+          <div class="form-err hidden" id="o-err" role="alert"></div>
+          <button class="btn full" type="submit" id="o-btn">Open account</button>
+         
+        </form>
+      </div>
+
+      <div class="preview" aria-hidden="true">
+        <div class="card">
+          <div class="t">Wells Fargo</div>
+          <div class="num" id="c-num">8672 •••• •••• 0000</div>
+          <div>
+            <div class="nm" id="c-name">Your name</div>
+            <div class="ty" id="c-type">Checking</div>
+          </div>
+        </div>
+        <p>Your account takes shape as you type.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="security" id="security" aria-labelledby="sec-h">
+    <div class="wrap">
+      <h2 id="sec-h">Keeping your account safe</h2>
+      <ul class="tips">
+        <li><strong>Keep your password to yourself</strong><span>Wells Fargo will never ask you for it by email, text, or phone.</span></li>
+        <li><strong>Use a password you don't use elsewhere</strong><span>If another site is breached, your bank account stays out of it.</span></li>
+        <li><strong>Sign off on shared devices</strong><span>Use Sign off when you finish, especially on a library or work computer.</span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== SIGNED-IN SITE ===================== -->
+<main id="dashboard" class="hidden">
+  <div class="appbar">
+    <div class="wrap">
+      <div class="apptabs" role="tablist" aria-label="Sections">
+        <button role="tab" type="button" data-view="accounts" aria-selected="true">Accounts</button>
+        <button role="tab" type="button" data-view="pay" aria-selected="false">Pay &amp; transfer</button>
+        <button role="tab" type="button" data-view="activity" aria-selected="false">Activity</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap dash">
+    <h1 id="welcome"></h1>
+
+    <section id="v-accounts" class="grid2">
+      <section class="panel" aria-labelledby="ba-h">
+        <h2 id="ba-h">Bank accounts</h2>
+        <ul class="acct-list">
+          <li>
+            <div>
+              <div class="an">Checking</div>
+              <div class="as" id="n-checking"></div>
+              <div class="quick">
+                <button type="button" class="link" data-quick="deposit" data-acct="checking">Deposit</button>
+                <button type="button" class="link" data-quick="transfer" data-acct="checking">Transfer</button>
+              </div>
+            </div>
+            <div class="ab"><div id="b-checking"></div><small>Available balance</small></div>
+          </li>
+          <li>
+            <div>
+              <div class="an">Savings</div>
+              <div class="as" id="n-savings"></div>
+              <div class="quick">
+                <button type="button" class="link" data-quick="deposit" data-acct="savings">Deposit</button>
+                <button type="button" class="link" data-quick="transfer" data-acct="savings">Transfer</button>
+              </div>
+            </div>
+            <div class="ab"><div id="b-savings"></div><small>Available balance</small></div>
+          </li>
+        </ul>
+        <div class="total"><span>Total balance</span><strong id="b-total"></strong></div>
+      </section>
+
+      <section class="panel" aria-labelledby="ra-h">
+        <h2 id="ra-h">Recent activity</h2>
+        <ul class="tx" id="tx-recent"></ul>
+        <button type="button" class="link" data-go="activity">See all activity</button>
+      </section>
+    </section>
+
+    <section id="v-pay" class="hidden">
+      <div class="panel narrow" aria-labelledby="mv-h">
+        <h2 id="mv-h">Pay &amp; transfer</h2>
+        <div class="tabs" role="tablist" aria-label="Action">
+          <button role="tab" type="button" data-tab="deposit" aria-selected="true">Deposit</button>
+          <button role="tab" type="button" data-tab="transfer" aria-selected="false">Transfer</button>
+          <button role="tab" type="button" data-tab="send" aria-selected="false">Send money</button>
+        </div>
+        <form id="act-form" novalidate>
+          <div id="g-payee" class="hidden">
+            <label for="a-payee">Send to</label>
+            <input class="input" id="a-payee" maxlength="80" placeholder="Name of person or business">
+          </div>
+          <div id="g-from" class="hidden">
+            <label for="a-from">From</label>
+            <select class="input" id="a-from"><option value="checking">Checking</option><option value="savings">Savings</option></select>
+          </div>
+          <div id="g-to">
+            <label for="a-to" id="to-l">Into</label>
+            <select class="input" id="a-to"><option value="checking">Checking</option><option value="savings">Savings</option></select>
+          </div>
+          <label for="a-amt">Amount (USD)</label>
+          <input class="input" id="a-amt" type="number" min="0" step="0.01" inputmode="decimal">
+          <div class="err" id="a-err" role="alert"></div>
+          <button class="btn full" type="submit" id="a-btn">Deposit money</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="v-activity" class="hidden">
+      <div class="panel" aria-labelledby="tx-h">
+        <h2 id="tx-h">Account activity</h2>
+        <ul class="tx" id="tx"></ul>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- ===================== HOW IT WORKS (always visible) ===================== -->
+<section class="how" id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <h2 id="how-h">How it works</h2>
+    <ol class="steps">
+      <li><h3>Tell us who you are</h3><p>Your name, email, and a password are enough to start.</p></li>
+      <li><h3>Choose where to begin</h3><p>Start with checking or savings. You get both either way.</p></li>
+      <li><h3>Fund it and go</h3><p>Make your first deposit, then send, move, and track money right away.</p></li>
+    </ol>
+
+    <h3 class="sec">What happens behind the scenes</h3>
+    <ul class="under">
+      <li><strong>Your password is never stored</strong><span>We keep only a salted scrypt hash, so even we can't read it back.</span></li>
+      <li><strong>Money is counted in whole cents</strong><span>Balances never drift from rounding, and an account can't go below $0.</span></li>
+      <li><strong>Every move is all or nothing</strong><span>A transfer takes money from one account and adds it to the other in one step, or does neither.</span></li>
+      <li><strong>Sign-ins expire</strong><span>Sessions end after 8 hours or when you sign off, and repeated wrong passwords are slowed down.</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div class="fb">Wells Fargo</div>
+
+    </div>
+    <div>
+      <div class="fb">Explore</div>
+      <ul>
+        <li><a href="#products">Checking &amp; savings</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#security">Security</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>

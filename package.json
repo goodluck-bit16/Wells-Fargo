@@ -1,0 +1,11 @@
+{
+  "name": "larkspur-bank",
+  "version": "1.0.0",
+  "description": "Demo bank website with a Node.js + SQLite backend (no npm dependencies)",
+  "private": true,
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "test": "node --disable-warning=ExperimentalWarning --test"
+  }
+}
